@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.hotel.dao.Hotel_styleDao">
+    <select id="findAll" 
+        resultType="com.hotel.entity.Hotel_style">
+        select * from Hotel_style
+    </select>
+    <select id="findById"
+    		parameterType="int"
+    		resultType="com.hotel.entity.Hotel_style">
+    	select * from Hotel_style where style_id=#{style_id}
+    </select>
+    <insert id="save"
+        parameterType="com.hotel.entity.Hotel_style">
+        insert into Hotel_style values(
+            null,
+            #{s_name}
+        )
+    </insert>
+    <update id="update"
+    		parameterType="com.hotel.entity.Hotel_style">
+    		update Hotel_style set
+					s_name=#{s_name}
+					where style_id=#{style_id}
+    </update>
+    <delete id="delete"
+    		parameterType="int">
+    		delete from Hotel_style where style_id=#{style_id}
+    </delete>
+</mapper>

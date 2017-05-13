@@ -1,0 +1,38 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, "SimHei", Arial, sans-serif;
+  margin-top: 50px;
+}
+
+.logo {
+  display: inline-block;
+  width: 63px;
+  height: 42px;
+  background: url("../img/hdr-spr.png") 0 -512px no-repeat;
+  margin-top: 1px;  /*Bootstrap不知道图片高度，需要手工调整*/
+}
+
+@media screen and (min-width: 768px){
+  .dn-big,
+  .dn-small {
+    position: relative;
+  }
+  .dn-caption {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+@media screen and (min-width: 992px){
+  .dn-small .list-unstyled {
+    padding: 20px;
+    line-height: 1.8em;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px){
+  .dn-small .list-unstyled {
+    padding: 27px;
+    line-height: 1.8em;
+  }
+}

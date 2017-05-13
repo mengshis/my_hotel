@@ -1,0 +1,227 @@
+body{
+    font:12px "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:0;
+    padding:0;
+    background: #F4F7FC;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+/*取消 某些元素 默认的 margin，padding，列表项标志*/
+p,h1,h2,h3,h4,h5,h6,ul,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.lf{float:left;}
+.rt{float:right;}
+.clear{clear:both;}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/**wrap***/
+.wrap{
+    width:100%;
+    background: #F7F8F9;
+    position: relative;
+    overflow: hidden;
+}
+#menu{
+    width: 220px;
+    position: fixed;
+    background: #E8EFF6;
+    height: 100%;
+    left: 0;
+}
+.container{
+    position: relative;
+    margin-left: 220px;
+    background: #fff;
+}
+#menu .navbar {
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    padding-top: 20%;
+    font-size: 14px;
+}
+#menu .navbar-default .navbar-nav{
+    margin: 7.5px -15px;
+    text-align: center;
+}
+@media only screen and (min-width: 1200px) {
+    #menu .navbar-header, #menu .navbar-nav, #menu .navbar-nav li {
+        float: none;
+    }
+}
+.navbar-header{
+    border-bottom: 1px solid #dddddd;
+}
+#menu .navbar-default .navbar-nav>li{
+    border-bottom: 1px solid #dddddd;
+}
+#menu .navbar-default .navbar-nav>li>a{
+    padding-left: 30px;
+    color: #232a2f;
+    font-weight: 300;
+    width: 100%;
+    transition:0.3s;
+}
+#menu .navbar-default .navbar-nav>li>a:hover {
+    background: rgba(38, 41, 46, .2);
+    transform:translateX(5px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+/***section***/
+.container{
+    background: #F4F7FC;
+}
+.container section{
+    margin: 60px;
+    padding: 35px 40px 30px 40px;
+}
+/**orderDetail**/
+#order-info{
+    background: #fff;
+}
+.crumb{
+    padding: 5px 10px;
+    border: 1px solid #d9e5f1;
+    border-bottom: 0;
+}
+.crumb a{
+    color: #36c;
+}
+.order-msg{
+    background: #fcf8e0;
+    border: 1px solid #dfe9f6;
+    border-bottom: 0;
+    color: #555;
+    padding: 20px 30px 10px 40px;
+    border-top: 1px solid #f4e9ce;
+}
+.state{
+    font-size: 14px;
+    margin-bottom: 10px;
+    float: left;
+    width: 450px;
+}
+.number{
+    width: 340px;
+    display: block;
+    margin-bottom: 10px;
+}
+span.date{
+    font-size: 12px;
+    color: #999;
+    margin-left: 5px;
+}
+span.order-state{
+    width: 450px;
+    display: block;
+}
+.price{
+    color: #f60;
+    width: 313px;
+    float: right;
+}
+.money-box{
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+}
+.money{
+    display: inline-block;
+    overflow: visible;
+    color: #848481;
+    margin-right: 5px;
+    font-size: 14px;
+}
+span.rmb{
+    font-family: arial, 宋体, sans-serif;
+    font-size: 24px;
+    color: rgb(255, 102, 0);
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    margin: 0px 5px;
+    border-bottom: 1px dotted rgb(255, 102, 0);
+}
+.house-detail{
+    border: 1px solid #d9e5f1;
+    border-top: 0;
+    padding: 35px 40px 30px 40px;
+}
+.hotel-info li{
+    margin-bottom: 7px;
+}
+.hotel-info a.name{
+    font-size: 20px;
+    font-family: 微软雅黑, "Microsoft YaHei", 黑体, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #36c;
+}
+span.title{
+    color: #999;
+}
+.btn-order a{
+    border: 1px solid #cde;
+    border-radius: 2px;
+    color: #37d;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    float: left;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+}
+.live-msg h2{
+    padding: 5px 0px;
+    border-bottom: 1px dashed #dee9f5;
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.live-msg ul{
+    width: 620px;
+    margin-top: 10px;
+}
+.live-msg ul li{
+    width: 310px;
+    white-space: nowrap;
+    padding: 5px 0;
+    float: left;
+    color: #555;
+}
+.pay p{
+    color: #555;
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+.btn-cancle{
+    width: 1000px;
+    padding: 0 0 50px 0;
+    text-align: right;
+}
+a#cancle-btn{
+    padding: 5px 10px;
+    background: #37d;
+    color: #fff;
+    border: 1px solid #cde;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+

@@ -1,0 +1,291 @@
+body{
+    font:12px "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:0;
+    padding:0;
+}
+a{
+    color:#666;
+    text-decoration:none;
+}
+a:hover{
+    color:#FF0700;
+    text-decoration:underline;
+}
+/*鍙栨秷 鏌愪簺鍏冪礌 榛樿鐨�margin锛宲adding锛屽垪琛ㄩ」鏍囧織*/
+p,h1,h2,h3,h4,h5,h6,ul,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.lf{float:left;}
+.rt{float:right;}
+.clear{clear:both;}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.skrollr-desktop body {
+    height:100% !important;
+}
+
+#skrollr-body {
+    height:100%;
+    overflow:visible;
+    position:relative;
+}
+/**order**/
+.order-bg{
+    background: #f0f4fb;
+    width: 100%;
+    padding-top: 20px;
+}
+.order-wrap{
+    width: 991px;
+    margin: 0 auto;
+}
+.order-wrap .content-title{
+    height: 27px;
+    margin-bottom: 20px;
+}
+.content-title .hotel-name{
+    color: #22c233;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 630px;
+    overflow: hidden;
+
+}
+.content{
+    width: 710px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+.content .order-info,.personal-info{
+    background: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.content .title{
+    height: 38px;
+    padding-left: 15px;
+
+}
+.content .title span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 38px;
+    color: #333;
+    font-weight: bold;
+}
+.content .line{
+    background: #f0f0f0;
+    height: 2px;
+    width: 100%;
+}
+.content .item{
+    margin: 15px 0 15px 0;
+}
+.content .item .item-title{
+    width: 114px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.item-title span{
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    float: left;
+    padding-left: 10px;
+}
+.item-body{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #666;
+    width: 552px;
+}
+.date-order,.room-order{
+    display: inline-block;
+    position: relative;
+}
+.begin-date{
+    border: 1px solid #dddddd;
+    width: 148px;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.week{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    color: #cccccc;
+}
+.duration{
+    margin-top: 10px;
+}
+#room-num{
+    display: inline-block;
+    border: 1px solid #dddddd;
+    width: 38px;
+    height: 30px;
+    line-height: 28px;
+    padding-left: 10px;
+}
+.total-price{
+    display: inline-block;
+    font-size: 16px;
+    color: #f60;
+    font-weight: bold;
+    margin-left: 18px;
+}
+.discount-amount{
+    display: inline-block;
+    width: 150px;
+    color: #f60;
+    font-size: 14px;
+}
+.no-coupon{
+    color: #999;
+    width: 150px;
+}
+.show-coupon .trigger{
+    color: #22c233;
+    cursor: pointer;
+    font-size: 14px;
+}
+.hide{
+    display: none;
+}
+.add-coupon{
+    display: inline-block;
+    font-size: 14px;
+    color: #22c233;
+    float: right;
+    cursor: pointer;
+}
+.personal-info{
+
+}
+#phone{
+    display: inline-block;
+    border: 1px solid #ddd;
+    width: 185px;
+    height: 30px;
+    padding: 0px 10px;
+    line-height: 30px;
+    float: left;
+}
+#email {
+    display: inline-block;
+    float: left;
+    border: 1px solid #ddd;
+    width: 238px;
+    height: 30px;
+    padding: 7px 10px 7px 10px;
+}
+.grey{
+    color: #cccccc;
+}
+.submit-order{
+    background: #fff;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.re-select {
+    float: left;
+    margin: 32px auto 32px 38px;
+}
+.re-select a{
+    color: #22c233;
+    font-size: 14px;
+}
+.submit-btn{
+    float: right;
+    width: 120px;
+    height: 40px;
+    margin: 23px 20px 20px auto;
+    font-size: 18px;
+    color: #fff;
+    background-color: #f80;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 2px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 0 none;
+}
+.submit-order .book-notes {
+    float: right;
+    margin: 32px 13px 32px auto;
+    font-size: 14px;
+    color: #999;
+    position: relative;
+}
+.book-notes a {
+    color: #22c233;
+    cursor: pointer;
+}
+.right-aside{
+    width: 270px;
+    float: right;
+    background: #fff;
+}
+.hotel-info img{
+    width: 270px;
+    height: 152px;
+}
+.hotel-n{
+    margin: 10px auto 0px 10px;
+    color: #22c233;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.hotel-addr{
+    margin-left: 10px;
+    color: #9e9f9f;
+    font-size: 14px;
+}
+.room-info{
+    padding: 5px 0px 5px 10px;
+}
+.room-name{
+    color: #333;
+    font-weight: bolder;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.room-info div {
+    margin: 2.5px auto 2.5px 0px;
+    font-size: 14px;
+    color: #666;
+}
+.room-info div span {
+    color: #645858;
+    font-weight: bolder;
+}
+.progress-detail span.time{
+    width: 115px;
+    line-height: 24px;
+    float: left;
+    color: #f60;
+}
+.progress-detail div{
+    width: 500px;
+    float: left;
+    line-height: 24px;
+    color: #f60;
+}
+
+
+
+
+
+
+
+
+

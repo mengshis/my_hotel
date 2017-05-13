@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.hotel.dao.StayInfoDao">
+    <select id="findById"
+    	parameterType="java.lang.Integer"
+        resultMap="stayInfoMap">
+        select s.*,o.* from stayInfo s
+        inner join myOrder o on s.oid=o.oid
+        where s.oid=#{oid}
+    </select>
+    <resultMap type="com.hotel.entity.StayInfo" id="stayInfoMap">
+        <id property="stayId" column="stayId"/>
+        <result property="come_time" column="come_time"/>
+        <result property="leave_time" column="leave_time"/>
+        <result property="isGoodsLoss" column="isGoodsLoss"/>
+        <result property="total_cost" column="total_cost"/>
+        <result property="oid" column="oid"/> 
+        <association property="myOrder" 
+            column="oid" 
+            javaType="com.hotel.entity.myOrder">
+        <id property="oid" column="oid"/>
+        <result property="o_num" column="o_num"/>
+        <result property="uid" column="uid"/>
+        <result property="r_id" column="r_id"/>
+        <result property="bookTime" column="bookTime"/>
+        <result property="o_state" column="o_state"/>
+        <result property="o_quantity" column="o_quantity"/>
+        <result property="isFreakfast" column="isFreakfast"/>    
+        </association>
+    </resultMap>
+    <select id="findById2"
+    	parameterType="java.lang.Integer"
+        resultType="com.hotel.entity.StayInfo">
+        select come_time,
+            leave_time,
+            isGoodsLoss,
+            total_cost,
+            oid
+        from stayInfo
+        where stayId=#{stayId} 
+    </select>
+    <select id="findAll"
+        resultMap="stayInfoMap1">
+        select s.*,o.* from stayInfo s
+        inner join myOrder o on s.oid=o.oid
+    </select>
+    <resultMap type="com.hotel.entity.StayInfo" id="stayInfoMap1">
+        <id property="stayId" column="stayId"/>
+        <result property="come_time" column="come_time"/>
+        <result property="leave_time" column="leave_time"/>
+        <result property="isGoodsLoss" column="isGoodsLoss"/>
+        <result property="total_cost" column="total_cost"/>
+        <result property="oid" column="oid"/> 
+        <association property="myOrder" 
+            column="oid" 
+            javaType="com.hotel.entity.myOrder">
+        <id property="oid" column="oid"/>
+        <result property="o_num" column="o_num"/>
+        <result property="uid" column="uid"/>
+        <result property="r_id" column="r_id"/>
+        <result property="bookTime" column="bookTime"/>
+        <result property="o_state" column="o_state"/>
+        <result property="o_quantity" column="o_quantity"/>
+        <result property="isFreakfast" column="isFreakfast"/>    
+        </association>
+    </resultMap>
+    
+    <update id="update">
+        update stayInfo set
+            come_time=#{come_time},
+            leave_time=#{leave_time},
+            isGoodsLoss=#{isGoodsLoss},
+            total_cost=#{total_cost},
+            oid=#{oid}
+        where stayId=#{stayId}
+    </update>
+    <insert id="save" parameterType="com.hotel.entity.StayInfo">
+        insert into stayInfo values(
+        	null,
+           #{come_time},
+           #{leave_time},
+           #{isGoodsLoss},
+           #{total_cost},
+           #{oid}
+        )
+    </insert>
+    
+    <delete id="delete" parameterType="int">
+        delete from stayInfo where stayId=#{stayId}
+    </delete>
+    
+</mapper>

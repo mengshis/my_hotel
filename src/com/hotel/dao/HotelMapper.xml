@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.hotel.dao.HotelDao">
+    <select id="findAll" 
+        resultType="com.hotel.entity.Hotel">
+        select * from ms_hotel
+    </select>
+    <select id="findById"
+    		parameterType="int"
+    		resultType="com.hotel.entity.Hotel">
+    	select * from ms_hotel where h_id=#{h_id}
+    </select>
+    
+    <insert id="save"
+        parameterType="com.hotel.entity.Hotel">
+        insert into ms_hotel values(
+            null,
+            #{h_name},
+            #{h_pic},
+            #{style_id},
+            #{addr},
+            #{totalStorey},
+            #{totalRoom},
+            #{h_intro},
+            #{h_phone}
+        )
+    </insert>
+    <update id="update"
+    		parameterType="com.hotel.entity.Hotel">
+    		update ms_hotel set
+					h_name=#{h_name},
+					h_pic=#{h_pic},
+					style_id=#{style_id},
+					addr=#{addr},
+					totalStorey=#{totalStorey},
+					totalRoom=#{totalRoom},
+					h_intro=#{h_intro},
+					h_phone=#{h_phone}
+					where h_id=#{h_id}
+    </update>
+    <delete id="delete"
+    		parameterType="int">
+    		delete from ms_hotel where h_id=#{h_id}
+    </delete>
+    <select id="queryHotelList" parameterType="com.hotel.entity.Hotel" resultType="com.hotel.entity.Hotel">
+	    select * from hotel
+	    <where>
+	    	<if test="h_name != null and !&quot;&quot;.equals(h_name.trim())">
+		    	and h_name like '%' #{h_name} '%'
+		    </if>
+		    <if test="addr != null and !&quot;&quot;.equals(addr.trim())">
+		    	and addr like '%' #{addr} '%'
+		    </if>
+	    </where>
+	  </select>
+	  <delete id="deleteBatch" parameterType="java.util.List">
+	  	delete from ms_hotel where h_id in(
+	  		<foreach collection="list" item="item" separator=",">
+	  			#{item}
+	  		</foreach>
+	  	)
+	  </delete>
+	  
+</mapper>

@@ -1,0 +1,129 @@
+body{
+    font:12px "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:0;
+    padding:0;
+    background: #F4F7FC;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+/*取消 某些元素 默认的 margin，padding，列表项标志*/
+p,h1,h2,h3,h4,h5,h6,ul,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.lf{float:left;}
+.rt{float:right;}
+.clear{clear:both;}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/**wrap***/
+.wrap{
+    width:100%;
+    background: #F7F8F9;
+    position: relative;
+    overflow: hidden;
+}
+/**register***/
+.head{
+    height: 50px;
+    padding: 25px 0;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+
+}
+.content{
+    background: #fff;
+}
+.content h1.title{
+    color: #555;
+}
+.title>label{
+    font-size: 24px;
+    font-family: Microsoft YaHei,SimHei,Arial,Helvetica,sans-serif;
+    display: inline-block;
+    margin-right: 20px;
+}
+.title span,a{
+    font-size: 14px;
+    font-weight: normal;
+}
+.title a{
+    color: #36c;
+}
+.register{
+    padding-top: 20px;
+}
+.register li{
+    margin-bottom: 20px;
+}
+.phone{
+    height: 28px;
+    overflow: visible;
+}
+.phone span{
+    color: #FF0000;
+}
+.register span input{
+    width: 248px;
+    height: 16px;
+    font-size: 14px;
+    border: 1px solid #dddddd;
+    line-height: 16px;
+    padding: 5px 3px;
+    float: left;
+    margin-left: 5px;
+}
+.register li p{
+    float: left;
+    width: 135px;
+    text-align: right;
+    font-size: 14px;
+    color: #555;
+    height: 30px;
+    line-height: 30px;
+}
+.register span input.vcode{
+    width: 118px;
+    vertical-align: middle;
+}
+img.validate{
+    vertical-align: middle;
+}
+
+.register span input.chk{
+    width: 20px;
+    vertical-align: middle;
+    border: none;
+    float: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

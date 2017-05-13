@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.hotel.dao.Goods_losingDao">
+    <select id="findById"
+    	parameterType="java.lang.Integer"
+        resultMap="goods_losingMap">
+        select g.*,s.* from goods_losing g
+        inner join stayInfo s on g.stayId=s.stayId
+        where g.stayId=#{stayId}
+    </select>
+    <resultMap type="com.hotel.entity.Goods_losing" id="goods_losingMap">
+        <id property="gid" column="gid"/>
+        <result property="g_name" column="g_name"/>
+        <result property="g_price" column="g_price"/>
+        <result property="g_num" column="g_num"/>
+        <result property="g_total" column="g_total"/>
+        <result property="stayId" column="stayId"/> 
+        <association property="stayInfo" 
+            column="stayId" 
+            javaType="com.hotel.entity.StayInfo">
+        <id property="stayId" column="stayId"/>
+        <result property="come_time" column="come_time"/>
+        <result property="leave_time" column="leave_time"/>
+        <result property="isGoodsLoss" column="isGoodsLoss"/>
+        <result property="total_cost" column="total_cost"/>
+        <result property="oid" column="oid"/> 
+        </association>
+    </resultMap>
+    <select id="findById2"
+    	parameterType="java.lang.Integer"
+        resultMap="goods_losingMap">
+        select g_name,
+            g_price,
+            g_num,
+            g_total,
+            stayId
+            from goods_losing 
+            where gid=#{gid}
+    </select>
+    <select id="findAll"
+    	parameterType="java.lang.Integer"
+        resultMap="goods_losingMap">
+        select g.*,s.* from goods_losing g
+        inner join stayInfo s on g.stayId=s.stayId
+    </select>
+    <resultMap type="com.hotel.entity.Goods_losing" id="goods_losingMap1">
+        <id property="gid" column="gid"/>
+        <result property="g_name" column="g_name"/>
+        <result property="g_price" column="g_price"/>
+        <result property="g_num" column="g_num"/>
+        <result property="g_total" column="g_total"/>
+        <result property="stayId" column="stayId"/> 
+        <association property="stayInfo" 
+            column="stayId" 
+            javaType="com.hotel.entity.StayInfo">
+        <id property="stayId" column="stayId"/>
+        <result property="come_time" column="come_time"/>
+        <result property="leave_time" column="leave_time"/>
+        <result property="isGoodsLoss" column="isGoodsLoss"/>
+        <result property="total_cost" column="total_cost"/>
+        <result property="oid" column="oid"/> 
+        </association>
+    </resultMap>
+    <update id="update">
+        update goods_losing set
+            g_name=#{g_name},
+            g_price=#{g_price},
+            g_num=#{g_num},
+            g_total=#{g_total},
+            stayId=#{stayId}
+        where gid=#{gid}
+    </update>
+    <insert id="save" parameterType="com.hotel.entity.Goods_losing">
+        insert into goods_losing values(
+            #{gid},
+        	#{g_name},
+            #{g_price},
+            #{g_num},
+            #{g_total},
+            #{stayId}
+        )
+    </insert>
+    <delete id="delete" parameterType="int">
+        delete from goods_losing where gid=#{gid}
+    </delete>
+</mapper>

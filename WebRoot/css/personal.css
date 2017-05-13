@@ -1,0 +1,366 @@
+body{
+    font:12px "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:0;
+    padding:0;
+    background: #F4F7FC;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+/*取消 某些元素 默认的 margin，padding，列表项标志*/
+p,h1,h2,h3,h4,h5,h6,ul,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.lf{float:left;}
+.rt{float:right;}
+.clear{clear:both;}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/**wrap***/
+.wrap{
+    width:100%;
+    background: #F7F8F9;
+    position: relative;
+    overflow: hidden;
+}
+#menu{
+    width: 220px;
+    position: fixed;
+    background: #E8EFF6;
+    height: 100%;
+    left: 0;
+}
+.container{
+    position: relative;
+    margin-left: 220px;
+    background: #fff;
+}
+#menu .navbar {
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    padding-top: 20%;
+    font-size: 14px;
+}
+#menu .navbar-default .navbar-nav{
+    margin: 7.5px -15px;
+    text-align: center;
+}
+@media only screen and (min-width: 1200px) {
+    #menu .navbar-header, #menu .navbar-nav, #menu .navbar-nav li {
+        float: none;
+    }
+}
+.navbar-header{
+    border-bottom: 1px solid #dddddd;
+}
+#menu .navbar-default .navbar-nav>li{
+    border-bottom: 1px solid #dddddd;
+}
+#menu .navbar-default .navbar-nav>li>a{
+    padding-left: 30px;
+    color: #232a2f;
+    font-weight: 300;
+    width: 100%;
+    transition:0.3s;
+}
+#menu .navbar-default .navbar-nav>li>a:hover {
+    background: rgba(38, 41, 46, .2);
+    transform:translateX(5px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+/***section***/
+.container{
+    background: #F4F7FC;
+}
+.container section{
+    margin: 60px;
+}
+#myMsg{
+    background: #fff;
+}
+#myMsg .ms-nav-tabs li{
+    float: left;
+    font-size: 14px;
+    height: 44px;
+    line-height: 44px;
+    background-color: #4c88d3;
+}
+#myMsg .ms-nav-tabs li a{
+    float: left;
+    display: inline-block;
+    height: 44px;
+    line-height: 41px;
+    background-color: #fff;
+    padding: 0 20px;
+    border-top: 3px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #e8eff6;
+    color: #333;
+    position: relative;
+}
+#myMsg .ms-nav-tabs li a.active{
+    float: left;
+    border-top: 0;
+    margin-top: 3px;
+    border-left: 1px solid #e8eff6;
+    border-right: 1px solid #e8eff6;
+    border-bottom: 1px solid transparent;
+    color: #36c;
+    top: 0;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.fade{opacity:0;
+    display: none; transition:opacity .5s linear}
+.in{
+    opacity: 1;
+    display: block;}
+table.manage{
+    width: 95%;
+    margin: 10px 2%;
+    height: auto;
+    font-size: 14px;
+    position: relative;
+}
+tbody{
+    padding-bottom: 30px;
+}
+tr.person-img{
+    height: 95px;
+    width: 95px;
+    border-radius: 50%;
+    position: absolute;
+    right: 25%;
+    top: 0px;
+}
+tr.person-img>td>p{
+    margin-top: 5px;
+    padding-left: 15px;
+}
+tr.person-img>td>img{
+    height: 95px;
+    width: 95px;
+    border-radius: 50%;
+}
+tr.person-img>td>a{
+    color: #22c233;
+}
+tr.person-info{
+    height: 50px;
+}
+td.title-name{
+    width: 100px;
+    text-align: right;
+    color: #666;
+}
+td.title-value{
+    padding: 20px 20px;
+}
+td.input-value{
+    padding: 0 20px;
+    line-height: 50px;
+}
+.fill-box {
+    padding-left: 10px;
+    width: 378px;
+    height: 28px;
+}
+.hide{
+    display: none;
+}
+.tip-style{
+    padding: 0 20px;
+    color: #999;
+    font-size: 14px;
+}
+.edit{
+    margin: 10px 100px;
+    background: #f60;
+    color: #fff;
+}
+td.J-btn div{
+    width: 100px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/**常用联系人**/
+.my-used-contact{
+    padding: 20px;
+}
+.search-name p{
+    line-height: 30px;
+    color: #666;
+    float: right;
+}
+.add-new-btn{
+    height: 30px;
+    border-radius: 3px;
+    padding: 0 15px;
+    color: #fff;
+    background: #37d;
+    line-height: 30px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.add-new-btn:hover{
+    color: #fff;
+}
+
+.edit-add{
+    border:1px solid #e8eff6;
+    position: relative;
+    margin-top: 20px;
+}
+.my-used-contact dt{
+    line-height: 30px;
+    padding-top: 20px;
+}
+.my-used-contact-list dl dt{
+    width: 120px;
+    font-size: 16px;
+    color: #555;
+    float: left;
+    text-align: center;
+}
+.my-used-contact-list dl dd{
+    float: left;
+    width: 638px;
+    padding: 20px;
+
+}
+.my-used-contact-list dd li{
+    width: 560px;
+    left: 80px;
+    top: 0;
+    position: relative;
+}
+.my-used-contact-list dd li span{
+    position: absolute;
+    width: 100px;
+    left: -120px;
+    text-align: right;
+    top: 0;
+    color: #777;
+    line-height: 27px;
+}
+.my-used-contact-list dd li span i{
+    position: relative;
+    top: 4px;
+    left: -4px;
+    font-size: 14px;
+    color: #FF0000;
+}
+.single{
+    margin-bottom: 15px;
+}
+.contact-info input.contact-name{
+    width: 200px;
+    height: 26px;
+    padding: 0 3px;
+    border: 1px solid #dcdcdc;
+    line-height: 26px;
+
+}
+.tips{
+    color: #555;
+    position: relative;
+    top: -5px;
+    padding-right: 20px;
+}
+.sele{
+    position: relative;
+}
+.sele h5{
+    float: left;
+    width: 150px;
+    height: 26px;
+    margin-right: 15px;
+    line-height: 26px;
+    cursor: pointer;
+    padding-right: 3px;
+    color: #555;
+    border: 1px solid #dcdcdc;
+}
+.province{
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.2);
+    width: 150px;
+    display: none;
+}
+.province a{
+    display: block;
+    height: 28px;
+    line-height: 24px;
+    padding-right: 4px;
+    overflow: hidden;
+    color: #555;
+}
+.J-btn{
+    padding-bottom: 20px;
+}
+.save-btn{
+    float: left;
+    width: 80px;
+    height: 30px;
+    font: 16px/30px Microsoft Yahei;
+    background: #36c;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    margin: 10px 10px 0 0;
+}
+.cancle-btn{
+    float: left;
+    width: 80px;
+    height: 30px;
+    font: 16px/30px Microsoft Yahei;
+    background: #fff;
+    color: #36c;
+    border: 1px solid #cde;
+    text-align: center;
+    border-radius: 3px;
+    margin: 10px 10px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

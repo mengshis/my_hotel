@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.hotel.dao.RoomDao">
+    <select id="findAll" 
+        resultType="com.hotel.entity.Room">
+        select * from Room
+    </select>
+    <select id="findById"
+        parameterType="int"
+        resultType="com.hotel.entity.Room">
+        select * from Room where r_id=#{r_id}
+    </select>
+   <select id="findByInStorey"
+    		parameterType="string"
+    		resultType="com.hotel.entity.Room">
+    	select * from ms_hotel where inStorey=#{inStorey}
+    </select>
+    <select id="findByH_id"
+        parameterType="int"
+        resultType="com.hotel.entity.Room">
+        select * from Room where h_id=#{h_id}
+    </select>
+    
+    <insert id="save"
+        parameterType="com.hotel.entity.Room">
+        insert into Room values(
+            null,
+            #{r_name},
+            #{inStorey},
+            #{r_style_id},
+            #{pic_id},
+            #{r_state},
+            #{h_id}
+        )
+    </insert>
+    <update id="update"
+        parameterType="com.hotel.entity.Room">
+        update Room set
+            r_name=#{r_name},
+            inStorey=#{inStorey},
+            r_style_id=#{r_style_id},
+            pic_id=#{pic_id},
+            r_state=#{r_state}
+        where r_id=#{r_id}
+    </update>
+    <delete id="delete"
+        parameterType="int">
+        delete from Room
+        where r_id=#{r_id}
+    </delete>
+</mapper>

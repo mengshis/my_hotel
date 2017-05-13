@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.hotel.dao.MyOrderDao">
+    <!-- 使用嵌套结果，在查询一条订单数据时，关联查询出对应的用户和房间 -->
+    <select id="findById"
+    	parameterType="java.lang.Integer"
+        resultMap="myOrderMap">
+        select o.*,u.*,r.* from (myOrder o
+        inner join user u on o.uid=u.uid) inner join Room r on r.r_id=o.r_id
+        where o.oid=#{oid}
+    </select>
+    <resultMap type="com.hotel.entity.myOrder" id="myOrderMap">
+        <id property="oid" column="oid"/>
+        <result property="o_num" column="o_num"/>
+        <result property="uid" column="uid"/>
+        <result property="r_id" column="r_id"/>
+        <result property="bookTime" column="bookTime"/>
+        <result property="o_state" column="o_state"/>
+        <result property="o_quantity" column="o_quantity"/>
+        <result property="isFreakfast" column="isFreakfast"/>    
+        
+        <association property="user" 
+            column="uid" 
+            javaType="com.hotel.entity.User">
+            <id property="uid" column="uid"/>
+            <result property="nick_name" column="nick_name"/>
+            <result property="pwd" column="upwd"/>
+            <result property="real_name" column="real_name"/> 
+            <result property="pid" column="pid"/> 
+            <result property="phone" column="phone"/> 
+            <result property="email" column="email"/>             
+        </association>
+        <association property="room" 
+            column="r_id" 
+            javaType="com.hotel.entity.Room">
+            <id property="r_id" column="r_id"/>
+            <result property="r_name" column="r_name"/>
+            <result property="inStorey" column="inStorey"/> 
+            <result property="r_style_id" column="r_style_id"/> 
+            <result property="r_pic" column="r_pic"/> 
+            <result property="r_state" column="r_state"/> 
+            <result property="h_id" column="h_id"/>             
+        </association>
+    </resultMap>   
+     <select id="findAll"
+        resultMap="myOrderMap2">
+        select o.*,u.*,r.* from (myOrder o
+        inner join user u on o.uid=u.uid) inner join Room r on r.r_id=o.r_id
+    </select>
+    <resultMap type="com.hotel.entity.myOrder" id="myOrderMap2">
+        <id property="oid" column="oid"/>
+        <result property="o_num" column="o_num"/>
+        <result property="uid" column="uid"/>
+        <result property="r_id" column="r_id"/>
+        <result property="bookTime" column="bookTime"/>
+        <result property="o_state" column="o_state"/>
+        <result property="o_quantity" column="o_quantity"/>
+        <result property="isFreakfast" column="isFreakfast"/>    
+        
+        <association property="user" 
+            column="uid" 
+            javaType="com.hotel.entity.User">
+            <id property="uid" column="uid"/>
+            <result property="nick_name" column="nick_name"/>
+            <result property="pwd" column="upwd"/>
+            <result property="real_name" column="real_name"/> 
+            <result property="pid" column="pid"/> 
+            <result property="phone" column="phone"/> 
+            <result property="email" column="email"/>             
+        </association>
+        <association property="room" 
+            column="r_id" 
+            javaType="com.hotel.entity.Room">
+            <id property="r_id" column="r_id"/>
+            <result property="r_name" column="r_name"/>
+            <result property="inStorey" column="inStorey"/> 
+            <result property="r_style_id" column="r_style_id"/> 
+            <result property="r_pic" column="r_pic"/> 
+            <result property="r_state" column="r_state"/> 
+            <result property="h_id" column="h_id"/>             
+        </association>
+    </resultMap>
+    <select id="findById2"
+    	parameterType="java.lang.Integer"
+    	resultType="com.hotel.entity.myOrder">
+        select o_num,
+            uid,
+            r_id,
+            bookTime,
+            o_state,
+            o_quantity,
+            isFreakfast
+            from myOrder
+        where oid=#{oid} 
+    </select>
+    <update id="update">
+        update myOrder set
+            o_num=#{o_num},
+            uid=#{uid},
+            r_id=#{r_id},
+            bookTime=#{bookTime},
+            o_state=#{o_state},
+            o_quantity=#{o_quantity},
+            isFreakfast=#{isFreakfast}
+        where oid=#{oid}
+    </update>
+    
+    <insert id="save" parameterType="com.hotel.entity.myOrder">
+        insert into myOrder values(
+        	null,
+            #{o_num},
+            #{uid},
+            #{r_id},
+            #{bookTime},
+            #{o_state},
+            #{o_quantity},
+            #{isFreakfast}
+       		
+        )
+    </insert>
+    
+    <delete id="delete" parameterType="int">
+        delete from myOrder where oid=#{oid}
+    </delete>
+    
+</mapper>

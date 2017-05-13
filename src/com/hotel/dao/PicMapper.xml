@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.hotel.dao.PicDao">
+    <select id="findAll" 
+        resultType="com.hotel.entity.Pic">
+        select * from pic
+    </select>
+    <select id="findById"
+        parameterType="int"
+        resultType="com.hotel.entity.Pic">
+        select * from pic where pic_id=#{pic_id}
+    </select>
+    <insert id="save"
+        parameterType="com.hotel.entity.Pic">
+        insert into pic values(
+            null,
+            #{pic1},
+            #{pic2},
+            #{pic3},
+            #{pic4},
+            #{pic5},
+            #{pic6},
+            #{pic7},
+            #{pic8},
+            #{pic9},
+            #{pic10},
+            #{pic11},
+            #{pic12}
+        )
+    </insert>
+    <update id="update"
+        parameterType="com.hotel.entity.Pic">
+        update pic set
+            pic1=#{pic1},
+            pic2=#{pic2},
+            pic3=#{pic3},
+            pic4=#{pic4},
+            pic5=#{pic5},
+            pic6=#{pic6},
+            pic7=#{pic7},
+            pic8=#{pic8},
+            pic9=#{pic9},
+            pic10=#{pic10},
+            pic11=#{pic11},
+            pic12=#{pic12}
+        where pic_id=#{pic_id}
+    </update>
+    <delete id="delete"
+        parameterType="int">
+        delete from pic
+        where pic_id=#{pic_id}
+    </delete>
+</mapper>
